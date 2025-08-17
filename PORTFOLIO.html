@@ -1,0 +1,1621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MY PORTFOLIO</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background-color: #1f242d;
+      color: #fff;
+      line-height: 1.6;
+    }
+     @media only screen and (max-width : 400px) {
+      body{
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+     }
+      @media only screen and (max-width : 400px) {
+        .about-box .fst{
+          font-size: 1px;
+
+        }}
+    header {
+      position: fixed;
+      width: 100%;
+      background-color: #1f242d;
+      z-index: 1000;
+      padding: 0px 40px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: bold;
+      color: white;
+    }
+
+    .logo span {
+      color: #7cf03d;
+    }
+
+    .menu {
+      display: flex;
+      list-style: none;
+    }
+
+    .menu li {
+      margin: 0 3px;
+    }
+
+    .menu li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 15px;
+      padding: 3px 8px;
+      border-radius: 4px;
+    }
+
+    .menu li a:hover
+    {
+      background-color: #7cf03d;
+      color: #1f242d;
+      font-weight: 400;
+      transition: 0.3s;
+    }
+
+    .menu-btn {
+      display: none;
+      font-size: 28px;
+      background: none;
+      border: none;
+      color: #7cf03d;
+      cursor: pointer;
+    }
+
+    /* Section1 - Hero */
+    .section1 {
+      padding-top: 100px;
+      min-height:fit-content;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      padding: 70px 20px;
+    }
+
+    .home-info {
+      flex: 1;
+      min-width: 300px;
+      text-align: left;
+      margin-left: 20px;
+    }
+
+    .home-info h1 {
+      font-size: 44px;
+      margin-top: 20px;
+      display: flex;
+    }
+
+    .home-info h2 {
+      font-size: 25px;
+    
+      display: flex;
+      
+
+      
+    }
+
+    .home-info p {
+
+      font-size: 10px;
+      line-height: 1.5;
+    }
+
+    .btn-sc {
+      display: flex;
+      align-items: center;
+      margin-top: 30px;
+    }
+
+    .btn {
+      padding: 2px 10px;
+      background-color: #7cf03d;
+      border: 2px solid #7cf03d;
+      border-radius: 30px;
+      box-shadow: 0 0 10px #7cf03d;
+      color: #1f242d;
+      font-weight: bold;
+      text-decoration: none;
+      margin-right: 15px;
+    }
+
+    .btn:hover {
+      background-color: transparent;
+      color: #7cf03d;
+    }
+
+    
+
+  
+
+    .home-img {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0px;
+    }
+
+    .img-box {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 2px solid #7cf03d;
+      margin-left: 50px;
+      animation: glowShadow 2s ease-in-out infinite;
+    }
+
+    .img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @keyframes glowShadow {
+      0% { box-shadow: 0 0 0px #7cf03d; }
+      50% { box-shadow: 0 0 20px #7cf03d; }
+      100% { box-shadow: 0 0 0px #7cf03d; }
+    }
+
+    section {
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    section h1 {
+      font-size: 30px;
+    
+    }
+
+    section p {
+      font-size: 16px;
+    }
+
+    /* Responsive Nav */
+    @media (max-width: 768px) {
+      .menu {
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #1f242d;
+        width: 200px;
+        display: none;
+      }
+
+      .menu.show {
+        display: flex;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+    }
+    .btn-sc2{
+     margin-left: 5px;
+
+    }
+    .btn-sc2 img{
+        margin-left: 3px;
+    
+        border-radius: 50%;
+        margin-top: 7px;
+        color: #7cf03d;
+      
+
+        
+        
+    }
+    .btn-sc2 img:hover{
+        box-shadow: 0 0 10px #7cf03d;
+        background-color: #7cf03d;
+
+    }
+
+
+
+
+    
+    .typing-container {
+      font-size: 25px;
+      font-weight: bold;
+      margin-left: 5px;
+      display: inline;
+      color: #7cf03d;
+      cursor: pointer;
+      display:flex;
+    }
+    
+
+    .cursor {
+      display: inline-block;
+      width: 2px;
+      height: 1em;
+      background-color: #fff;      margin-left: 4px;
+      animation: blink 0.7s steps(1) infinite;
+    }
+
+    @keyframes blink {
+      50% {
+
+
+        opacity: 0;
+      }
+    }
+    
+    
+    .section2{
+     
+      padding: 35px 15px 10px;
+      text-align: center;
+      justify-content: space-evenly;
+    
+    }
+    
+   
+    
+    
+    .contentbox{
+      display: flex;
+    justify-content: center;
+      align-items: center;
+      background-color:#1f242d;
+      box-shadow: 0 0 10px #15181c;
+      height: fit-content;
+      width: 100%;
+      text-transform: uppercase;
+      margin-top: 20px
+    
+      
+    }
+    .section3{
+      padding: 35px 15px 10px;
+      text-align: center;
+      justify-content: space-evenly;
+    }
+    .bigbox{
+    
+      height: fit-content;
+      width: 100%;
+      display: flex;
+      justify-content: space-evenly;
+      text-align: center;
+      align-items: center;
+      
+      
+
+
+    }
+      
+    .bigbox2{
+    
+      height: fit-content;
+      width: 100%;
+      display: flex;
+      justify-content: space-evenly;
+      text-align: center;
+      align-items: center;
+      margin-top: 20px;
+
+
+    }
+
+    .box1{
+      width: 100%;
+      background-color: #343a40;
+      border-radius: 5px;
+      border: 1px solid;
+      height: fit-content;
+      border:1px solid black;
+      
+    }
+    .box2{
+      width: 100%;
+      background-color: #343a40;
+      border: 1px solid;
+      border-radius: 5px;
+     margin-left: 10px;
+      height: fit-content;
+       border:1px solid black;
+    }
+    .box3{
+      width:100%;
+      background-color: #343a40;
+      border-radius: 5px;
+      border: 1px solid;
+      margin-left: 10px;
+       border:1px solid black;
+      height: fit-content;
+    }
+    
+    .box1-content{
+      font-size: 8px;
+      text-align: left;
+      margin-left: 5px;
+    }
+    .box2-content{
+       font-size: 8px;
+      text-align: left;
+      margin-left: 5px;
+
+    }
+    .box2-content img{
+      margin-top: 0px;
+    }
+    .box3-content{
+      font-size: 8px;
+      text-align: left;
+      margin-left: 5px
+    }
+   .box1:hover{
+    border-color: #7cf03d;
+    box-shadow:0 0 5px #7cf03d ;
+   }
+   .box1:hover h2{
+    color: #7cf03d;
+    text-shadow:0 0 5px #7cf03d;
+   }
+   
+   .box2:hover{
+    border-color: #7cf03d;
+    box-shadow: 0 0 5px #7cf03d;
+   }
+   .box2:hover h2{
+    color: #7cf03d;
+    text-shadow: 0 0 5px #7cf03d;
+   }
+   .box3:hover{
+    border-color: #7cf03d;
+    box-shadow: 0 0 5px #7cf03d;
+   }
+   .box3:hover h2{
+    color: #7cf03d;
+    text-shadow: 0 0 5px;
+   }
+   .box3 h2{
+    width: fit-content;
+   }
+   .arrow{
+    margin-left: 60%;
+    margin-bottom: 10px;
+   }
+   .box1:hover .arrow{
+    background-color: #7cf03d;
+   }
+   .box2:hover .arrow{
+    background-color: #7cf03d;
+   }
+   .resume-box{
+    display: flex;
+    justify-content: center;
+    
+    margin-right: 10px;
+  
+   }
+   .resume-box1{
+    
+    justify-content: center;
+    align-items: center;
+     background-color: #1f242d;
+    height: fit-content;
+    width: 50%;
+   }
+   .resume-box2{
+    background-color: #1f242d;
+    margin-left: 20px;
+    width: 100%;
+   }
+   .resume-box1 h6{
+    font-size: 8px;
+    font-family: arial;
+    font-weight: 200;
+     background-color: #1f242d;
+    
+   }
+   .resume-box1 h2{
+    font-size:20px ;
+    font-weight: 700;
+   }
+    .left {
+      
+       background-color: #1f242d;
+      color: white;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      gap:10px;
+    }
+      .box {
+      background-color: #343a40;
+      padding: 5px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    
+    }
+
+    .box:hover {
+      background-color: #495057;
+      
+    }
+    .box:hover p{
+      color: #7cf03d;
+      
+    }
+    .right {
+      width: 60%;
+    color: #c2c7ce;
+    width: 100%;
+    
+    }
+
+    .content {
+      display: none;
+    }
+
+    .content.active {
+      display: block;
+    }
+    .exp{
+      display: flex;
+    }
+    .ex-box1{
+      background-color: #343a40;
+      height: 100px;
+      text-align: left;
+      align-items: center;
+      justify-content: space-evenly;
+      color: rgb(255, 255, 255);
+      width: 100%;
+      border-radius: 5px;
+      margin-top: 10px;
+      margin-left: 10px;
+      border: 1px solid #343a40;
+    
+    }
+    .ex-box1:hover{
+    border:1px solid #7cf03d;
+    box-shadow: 0 0 5px #7cf03d; }
+    .ex-box1:hover .project{
+    color: #7cf03d;
+      }
+    .ex-box1 p{
+    margin-left: 5px;
+      
+    }
+
+    .ex-box2{
+      background-color: #343a40;
+      height: 100px;
+      border-radius: 5px;
+      text-align: left;
+      align-items: center;
+      justify-content: space-evenly;
+      color: black;
+      width: 100%;
+      margin-left: 10px;
+      margin-top: 10px;
+
+    }
+     .ex-box2:hover{
+    border:1px solid #7cf03d;
+    box-shadow: 0 0 5px #7cf03d; }
+    .ex-box2:hover .project{
+    color: #7cf03d;
+      }
+    .ex-box2 p{
+    margin-left: 5px;
+    color: white;
+      
+    }
+    
+       .ex-box3{
+      background-color: #343a40;
+      height: 100px;
+      border-radius: 5px;
+      text-align: left;
+      align-items: center;
+      justify-content: space-evenly;
+      color: black;
+      width: 100%;
+      margin-left: 10px;
+      margin-top: 10px;
+
+    }   
+         .ex-box3:hover{
+    border:1px solid #7cf03d;
+    box-shadow: 0 0 5px #7cf03d; }
+    .ex-box3:hover .project{
+    color: #7cf03d;
+      }
+    .ex-box3 p{
+    margin-left: 5px;
+    color: white;
+      
+    }
+       .ex-box4{
+      background-color:#343a40;
+      height: 100px;
+        border-radius: 5px;
+      text-align:left;
+      align-items: center;
+      justify-content: space-evenly;
+      color: black;
+      width: 100%;
+      margin-left: 10px;
+      margin-top: 20px;
+
+    }
+        .ex-box4:hover{
+    border:1px solid #7cf03d;
+    box-shadow: 0 0 5px #7cf03d; }
+    .ex-box4:hover .project{
+    color: #7cf03d;
+      }
+    .ex-box4 p{
+    margin-left: 5px;
+    color: white;
+      
+    }
+       .ex-box5{
+      background-color:#343a40;
+      height: 100px;
+        border-radius: 5px;
+      text-align:left;
+      align-items: center;
+      justify-content: space-evenly;
+      color: black;
+      width: 100%;
+      margin-left: 10px;
+      margin-top: 20px;
+
+    }
+        .ex-box5:hover{
+    border:1px solid #7cf03d;
+    box-shadow: 0 0 5px #7cf03d; }
+    .ex-box5:hover .project{
+    color: #7cf03d;
+      }
+    .ex-box5 p{
+    margin-left: 5px;
+    color: white;
+      
+    }
+       .ex-box6{
+      background-color:#343a40;
+      height: 100px;
+        border-radius: 5px;
+      text-align:left;
+      align-items: center;
+      justify-content: space-evenly;
+      color: black;
+      width: 100%;
+      margin-left: 10px;
+      margin-top: 20px;
+
+    }
+        .ex-box6:hover{
+    border:1px solid #7cf03d;
+    box-shadow: 0 0 5px #7cf03d; }
+    .ex-box6:hover .project{
+    color: #7cf03d;
+      }
+    .ex-box6 p{
+    margin-left: 5px;
+    color: white;
+      
+    }
+
+   /* Mobile Responsive Fixes */
+@media (max-width: 768px) {
+
+  .section1 {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .home-info {
+    margin-left: 0;
+    padding: 10px;
+  }
+
+  .home-info h1 {
+    font-size: 30px;
+  }
+
+  .home-info h2 {
+    font-size: 18px;
+    flex-direction: column;
+  }
+
+  .typing-container {
+    font-size: 18px;
+    margin-top: 5px;
+  }
+
+  .btn-sc {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .btn-sc2 {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .img-box {
+    margin-left: 0;
+    margin-top: 20px;
+  }
+
+  .resume-box {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .resume-box1,
+  .resume-box2 {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .exp {
+    flex-direction: column;
+  }
+
+  .bigbox,
+  .bigbox2 {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .box1,
+  .box2,
+  .box3 {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .left {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .box {
+    width: 45%;
+    text-align: center;
+  }
+}
+.about-box{
+  width: 100%;
+  height: fit-content;
+
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-evenly;
+  text-align:left;
+
+}
+.about-box ul li {
+  margin-top: 20px;
+
+}
+
+
+.section5{
+  padding: 25px 15px 10px;
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+  margin-left: 10px;
+  
+}
+.contact-box-left
+{
+  background-color:#1f242d;
+  height: fit-content;
+  width: 100%;
+  align-items: center;
+  margin-right: 20px;
+  text-align: center;
+  justify-content: space-evenly;
+  
+  
+  
+}
+.contact-box-left img{
+  align-items: center;
+  text-align: center;
+  display: flex;
+  
+}
+.contact-box-left h1{
+  margin-top: 50px;
+}
+.contact-box-left p{
+  font-size: 8px;
+  
+}
+.contact-box-right{
+  
+  width: 100%;
+
+}
+.contact-box-right .bigbox{
+  width: 90%;
+  height: 250px;
+  justify-content: space-evenly;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background-color: #343a40;
+
+}
+.box1-contact{
+  
+  height: 20px;
+  width: 20px;
+  display: flex;
+  margin-left: 0%;
+  margin-top: 50px;
+  
+  
+}
+.phone{
+  margin-left: 10px;
+  line-height: 110%;
+  color: #7cf03d;
+  font-size: small;
+  text-align: left;
+  
+  
+
+}
+
+.box2-contact{
+  
+  height: 30px;
+  width: 30px;
+  display: flex;
+  margin-left: 0%;
+  height: fit-content;
+  
+  margin-top: 30px;
+  
+  
+}
+.box3-contact{
+  
+  height: 30px;
+  width: 30px;
+  display: flex;
+  margin-left: 0%;
+  margin-top: 30px;
+  
+  
+  
+}
+ 
+
+ .contact-section {
+      padding: 0px 10px;
+      max-width: 600px;
+      margin: auto;
+
+    }
+
+    .contact-section h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 25px;
+    
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+
+      gap: 5px;
+    }
+  
+    .contact-form input,
+    .contact-form textarea {
+      padding: 5px;
+      border: 1px solid black;
+      
+      background-color:#1f242d;
+      border-radius: 3px;
+      font-size: 10px;
+      color: white;
+    }
+     .contact-form input:focus,
+    .contact-form textarea:focus {
+      outline: 1px solid #7cf03d;
+    }
+
+    .contact-form button {
+      background-color: #7cf03d;
+      color:black;
+      width: fit-content;
+      padding: 5px;
+      margin-left: auto;
+      margin-top: 30px;
+      margin-bottom: 20px;
+      box-shadow: 0 0 10px #7cf03d;
+      font-size: 12px;
+      font-weight: 400;
+      text-align: center;
+      align-items: center;
+      margin-right: 20px;
+      border: none;
+      border-radius: 18px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .contact-form button:hover {
+      background-color: transparent;
+      color: white;
+      border: 1px solid;
+      box-shadow: none;
+    }
+
+    @media (max-width: 600px) {
+      .contact-section h2 {
+        font-size: 28px;
+      }
+    }
+
+
+      .project-box {
+    background: #2a2f3b;
+    padding: 20px;
+    border-radius: 15px;
+    max-width: 700px;
+    width: 90%;
+    height: 280px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    transition: 0.4s ease;
+    margin-left: 7%;
+  }
+
+  .project-box h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+
+  .project-box p {
+    font-size: 0.95rem;
+    opacity: 0.8;
+    margin-bottom: 50px;
+  }
+
+  .buttons {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    display: flex;
+    gap: 10px;
+  }
+
+  .buttonpre {
+    background: #7cf03d;
+    box-shadow: 0 0 10px #7cf03d;
+    border: none;
+   border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+
+  button:hover {
+    background: #00bbaa;
+  }
+
+   
+  </style>
+</head>
+<body>
+ 
+
+  <header>
+    <nav>
+      <div class="logo">port<span>folio.</a></span></div>
+      <button class="menu-btn">&#9776;</button>
+      <ul class="menu">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#about">resume</a></li>
+        <li><a href="#services">Services</a></li>
+        <!-- <li><a href="#portfolio">Portfolio</a></li> -->
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="home" class="section1">
+    <div class="home-info">
+      <h1>RAJJAN KUMAR</h1>
+   
+        <div class="typing-container">_  
+           <!-- <span style="color: white; font-size:25px; margin-right: 5px;">I am a </span> -->
+    <span id="typed-text"></span><span class="cursor"></span>
+  </div>
+
+
+      </h2>
+      <p>I am a passionate Web Developer and Cloud Engineer with hands-on experience in building responsive web applications. I specialize in front-end and back-end development.</p>
+      <div class="btn-sc">
+        <a href="RAJJAN KUMAR RESUME.pdf"  target="_blank" class="btn">Download CV</a>
+        <div class="btn-sc2">
+         <a href="https://github.com/Rajjan-kumar-26" target="_blank"><img src="png github.png" alt="github link" height="13px"></a>
+          <a href="https://www.linkedin.com/in/rajjan-kumar-b337b033b/" target="_blank"><img src="png2 linkein.png" alt="LinkedIn" height="13px" /></a>
+           <a href="https://mail.google.com/mail/u/0/#inbox" target="_blank"><img src="email-envelope-white-icon.webp" alt="Instagram" height="15px" /></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="home-img">
+      <div class="img-box">
+        <img src="4.jpg" alt="My Image" />
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+<!--about sectionnnnn-->
+  <section id="about" class="section2">
+  <h1>resu<span style="color: #7cf03d;">me</span></h1>
+  <div class="resume-box">
+  <div class="resume-box1">
+    <h2>WHY <span style="color: #7cf03d;">HIRE</span> ME </h2>
+    <H6>I’m a fast learner with a passion for coding, 
+      strong basics in software and cloud, and a 
+      commitment to delivering quality work.</H6>
+       <div class="left">
+  
+    <div class="box" onclick="showContent('experience')"><p>Experience</p></div>
+    <div class="box" onclick="showContent('education')"><p>Education</p></div>
+    <div class="box" onclick="showContent('skills')"><p>Skills</p></div>
+    <div class="box" onclick="showContent('about1')"><p>about</p></div>
+  
+  </div>
+  </div>
+    <div class="resume-box2">
+
+  
+    <div class="right">
+    
+    
+    
+    
+    <div id="experience" class="content active">
+    <h2 style="text-transform: uppercase; font-weight: 100; font-size: 15px;">my Experience</h2>
+    <div class="exp">
+
+<!--box1 in resume experience-->
+
+    <div class="ex-box1">
+    <span style="text-transform: uppercase; font-size: 12px; margin-left: 5px; color: #7cf03d;">frontend devloper</span>
+    <p style="font-size: 8px;"> Creative and detail-oriented 
+    frontend developer with a strong grasp of HTML5 , CSS , and JavaScript. I build responsive,</p>
+    <p style="font-size: 9px; text-transform: uppercase; margin-top:10px;" class="project">- click to show my project</p>
+    </div>
+      
+    <!--box2 in remume experience-->
+      
+    <div class="ex-box2">
+    <span style="text-transform: uppercase; font-size: 12px; margin-left: 5px; color: #7cf03d;">backend devloper</span>
+    <p style="font-size: 8px;">  Skilled backend developer with a focus on server-side
+    logic, databases, and APIs.
+    I ensure smooth performance, security, and reliability behind the scenes.</p>
+    <p style="font-size: 9px; text-transform: uppercase; margin-top:px;" class="project">- click to show my project</p>
+    </div>
+     
+     
+     
+    <!--box3 in remuse experince-->
+     
+     
+      <div class="ex-box3">
+          <span style="text-transform: uppercase; font-size: 12px; margin-left: 5px; color: #7cf03d;">full stack devloper</span>
+          <p style="font-size: 8px;">Versatile full stack developer skilled in both frontend and backend technologies. I build complete web applications—from user interfaces to server-side</p>
+           <p style="font-size: 9px; text-transform: uppercase; margin-top:px;" class="project">- click to show my project</p>
+      </div>
+      </div>
+    
+    
+      <!--box4 in resume experice-->
+         
+      <div class="exp">
+      <div class="ex-box4">
+
+         <span style="text-transform: uppercase; font-size: 12px; margin-left: 5px; color: #7cf03d;">aws basics</span>
+          <p style="font-size: 8px;">Fundamental knowledge of AWS services like EC2, S3, IAM, and VPC. Skilled in cloud setup, storage, and deployment using AWS Free Tier.</p>
+           <p style="font-size: 9px; text-transform: uppercase; margin-top:px;" class="project">- click to show my project</p>
+      
+      </div>
+
+
+    <!--box 5 in resume experice-->
+     <div class="ex-box5">
+      <h1 style="color: white; text-align: center; justify-content: center; align-items: center;">cooming soon</h1>
+       <!-- <span style="text-transform: uppercase; font-size: 12px; margin-left: 5px; color: #7cf03d;">aws basics</span>
+          <p style="font-size: 8px;">Fundamental knowledge of AWS services like EC2, S3, IAM, and VPC. Skilled in cloud setup, storage, and deployment using AWS Free Tier.</p>
+           <p style="font-size: 9px; text-transform: uppercase; margin-top:px;" class="project">- click to show my project</p> -->
+
+     </div>
+
+     <!--box 6 resume exp-->
+
+
+
+      <div class="ex-box6">
+        <h1 style="color: white; text-align: center; justify-content: center; align-items: center;">cooming soon</h1>
+
+         <!-- <span style="text-transform: uppercase; font-size: 12px; margin-left: 5px; color: #7cf03d;">aws basics</span>
+          <p style="font-size: 8px;">Fundamental knowledge of AWS services like EC2, S3, IAM, and VPC. Skilled in cloud setup, storage, and deployment using AWS Free Tier.</p>
+           <p style="font-size: 9px; text-transform: uppercase; margin-top:px;" class="project">- click to show my project</p> -->
+      </div>
+      </div>
+   
+   
+    </div>
+   
+   
+   <!--education content in resume boxxessssss-->
+   
+   
+   
+   
+    <div id="education" class="content">
+     <h2 style="text-transform: uppercase; font-weight: 100; font-size: 15px;">my Education</h2>
+    <div class="exp">
+
+<!--box1 in resume experience-->
+
+    <div class="ex-box1">
+    <span style="text-transform: uppercase; font-size: 12px; margin-left: 5px; color: #7cf03d;">higher-secondry</span>
+    <p style="font-size: 8px;"> "Successfully completed Higher Secondary (10+2) from up board, gaining foundational knowledge and skills for higher education."<br>
+    in s.j.p.sharma inter college baberu banda
+    </p>
+       <p style="font-size: 9px; text-transform: uppercase; margin-top:px;" class="project">year- 2023-24 with 68%</p>
+      
+    </div>
+      
+    <!--box2 in remume experience-->
+      
+    <div class="ex-box2">
+    <span style="text-transform: uppercase; font-size: 12px; margin-left: 5px; color: #7cf03d;">ug in bca</span>
+    <p style="font-size: 8px;"> "Pursuing Bachelor of Computer Applications (BCA) with a focus on programming, web development, and computer fundamentals."
+      <br>college- mgcgv chitakoot m.p.
+    </p>
+     <p style="font-size: 9px; text-transform: uppercase; margin-top:px;" class="project">year- 2024-2027</p>
+      
+    </div>
+     
+     
+     
+    <!--box3 in remuse experince-->
+     
+     
+      <div class="ex-box3">
+          <span style="text-transform: uppercase; font-size: 12px; margin-left: 5px; color: #7cf03d;">adca</span>
+          <p style="font-size: 8px;">"Completed ADCA, gaining practical knowledge in computer fundamentals, MS Office, internet, and basic programming."</p>
+           
+      </div>
+      </div>
+    
+    
+      <!--box4 in resume experice-->
+         
+      <div class="exp">
+      <div class="ex-box4">
+
+         <span style="text-transform: uppercase; font-size: 12px; margin-left: 5px; color: #7cf03d;">tally erp - 9</span>
+          <p style="font-size: 8px;">"Trained in Tally ERP 9 with hands-on experience in accounting, GST, inventory management, and payroll processing."</p>
+          
+      
+      </div>
+
+
+    <!--box 5 in resume experice-->
+     <div class="ex-box5">
+       <!-- <span style="text-transform: uppercase; font-size: 12px; margin-left: 5px; color: #7cf03d;">aws basics</span>
+          <p style="font-size: 8px;">Fundamental knowledge of AWS services like EC2, S3, IAM, and VPC. Skilled in cloud setup, storage, and deployment using AWS Free Tier.</p>
+           <p style="font-size: 9px; text-transform: uppercase; margin-top:px;" class="project">- click to show my project</p> -->
+      <h1 style="color: white; text-align: center; justify-content: center; align-items: center;">comming soon</h1>
+     </div>
+
+     <!--box 6 resume exp-->
+
+
+
+      <div class="ex-box6">
+        <h1 style="color: white; text-align: center; justify-content: center; align-items: center;">comming soon</h1>
+
+         <!-- <span style="text-transform: uppercase; font-size: 12px; margin-left: 5px; color: #7cf03d;">aws basics</span>
+          <p style="font-size: 8px;">Fundamental knowledge of AWS services like EC2, S3, IAM, and VPC. Skilled in cloud setup, storage, and deployment using AWS Free Tier.</p>
+           <p style="font-size: 9px; text-transform: uppercase; margin-top:px;" class="project">- click to show my project</p> -->
+      </div>
+      </div>
+   
+   
+    </div>
+   
+   
+    </div>
+   
+   
+   
+    <div id="skills" class="content">
+      
+       <h2 style="text-transform: uppercase; font-weight: 100; font-size: 15px;">my skills</h2>
+    <div class="exp">
+
+<!--box1 in resume experience-->
+
+    <div class="ex-box1" >
+    <img src="html1.png" height="70px" alt="html logo" style="align-items: center; text-align: center; display: flex; margin-left: 30%; margin-top: 10px;"  ">
+    </div>
+      
+    <!--box2 in remume experience-->
+      
+    <div class="ex-box2">
+          <img src="css2.png" height="70px" alt="html logo"  style="margin-left: 30%; display: flex; margin-top: 10px;">
+    </div>
+     
+     
+     
+    <!--box3 in remuse experince-->
+     
+     
+      <div class="ex-box3">
+             <img src="javascript3.png" height="70px" alt="html logo"  style="margin-left: 20%; display: flex; margin-top: 10px;">
+      </div>
+      </div>
+    
+      <!--box4 in resume experice-->
+         
+      <div class="exp">
+      <div class="ex-box4">
+
+           <img src="React-icon.svg.png" height="70px" alt="html logo"  style="margin-left: 30%; display: flex; margin-top: 10px;">
+      </div>
+
+
+    <!--box 5 in resume experice-->
+     <div class="ex-box5">
+         <img src="Node.js_logo.svg.png" height="70px" alt="html logo"  style="margin-left: 20%; display: flex; margin-top: 10px;">
+
+     </div>
+
+     <!--box 6 resume exp-->
+
+
+
+      <div class="ex-box6">
+         <img src="mongodb-icon-12.svg" height="70px" alt="html logo"  style="margin-left: 30%; display: flex; margin-top: 10px;">
+
+      
+      </div>
+      </div>
+   
+   
+    </div>
+
+    
+   <div id="about1" class="content">
+     <h2 style="text-transform: uppercase; font-weight: 100; font-size: 15px; color: #7cf03d;">about</h2>
+     <div class="about-box" style="display: flex; ">
+      <div class="fst">
+        <ul>
+         <li style="color: #7cf03d; font-size: 10px; text-transform: uppercase;">
+          name - <span style="color: white; font-size: 10px;">RAJJAN KUMAR</span></li>
+           <li style="color: #7cf03d; font-size: 10px; text-transform: uppercase;">
+          status - <span style="color: white; font-size: 10px;">unmarride</span></li>
+           <li style="color: #7cf03d; font-size: 10px; text-transform: uppercase;">
+          experience - <span style="color: white; font-size: 10px;">fresser level</span></li>
+           <li style="color: #7cf03d; font-size: 10px; text-transform: uppercase;">
+          phone - <span style="color: white; font-size: 10px;">7458944200</span></li>
+        </ul>
+      </div>
+
+       <div class="fst">
+        <ul>
+         <li style="color: #7cf03d; font-size: 10px; text-transform: uppercase;">
+          gender - <span style="color: white; font-size: 10px;">male</span></li>
+           <li style="color: #7cf03d; font-size: 10px; text-transform: uppercase;">
+          city - <span style="color: white; font-size: 10px;"> banda</span></li>
+           <li style="color: #7cf03d; font-size: 10px; text-transform: uppercase;">
+          fulltime - <span style="color: white; font-size: 10px;">availble</span></li>
+           <li style="color: #7cf03d; font-size: 10px; text-transform: uppercase;">
+          email - <span style="color: white; font-size: 10px;"><span>mayankt1303@gmail.com</span></span></li>
+        </ul>
+      </div>
+
+
+      
+  
+
+      <div class="fst" style="flex-wrap: wrap;">
+        <ul>
+         <li style="color: #7cf03d; font-size: 10px; text-transform: uppercase;">
+          age - <span style="color: white; font-size: 10px;">18</span></li>
+           <li style="color: #7cf03d; font-size: 10px; text-transform: uppercase;">
+          nationality - <span style="color: white; font-size: 10px;">indian</span></li>
+           <li style="color: #7cf03d; font-size: 10px; text-transform: uppercase;">
+          freelance - <span style="color: white; font-size: 10px;">availble</span></li>
+           <li style="color: #7cf03d; font-size: 10px; text-transform: uppercase;">
+          language - <span style="color: white; font-size: 10px;">hindi , english</span></li>
+        </ul>
+      </div>
+    
+</div>
+
+   </div>
+   
+ 
+
+ 
+
+
+  </section>
+
+
+
+
+
+
+  <section id="services" class="section3">
+    <h1>My <span style="color: #7cf03d;"> Services</span></h1>
+    <div class="bigbox">
+      <div class="box1">
+        
+        <div class="box1-content">
+          <img src="codding logo.png" height="50px" alt="weblogo">
+         
+          <h2>WEB DEVLOPEMENT</h2>
+"I design and build responsive, user-friendly websites using modern web technologies like HTML, CSS, JavaScript, and frameworks. My focus is on clean code, fast performance, and seamless user experience across all devices."
+</div>
+      </div>
+      <div class="box2">
+        <div class="box2-content">
+        <img src="cloud-white-icon.webp" alt="cloud" height="50px">
+    
+        <h2>CLOUD ENGINEER</h2>
+        "I work on cloud platforms like AWS to set up, manage, and secure servers and services, helping apps run smoothly and scale easily online."
+          Focused on automation, security, and high availability for modern applications."
+
+        </div>
+      </div>
+      <div class="box3">
+        <div class="box3-content">
+          <img src="devops........png" alt="devops logo" height="50px">
+
+          
+          <h2>DEVOPS ENGINEER</h2>
+          "I help developers release software faster and more reliably by automating servers, deployments,
+           and monitoring using tools like Docker and Jenkins.
+           "DevOps Engineer specializing in CI/CD, infrastructure automation, and cloud deployment."
+          
+        </div>
+      </div>
+    </div>  
+
+     <div class="bigbox2">
+      <div class="box1">
+        
+        <div class="box1-content">
+          <img src="png github.png" height="50px" alt="weblogo">
+        
+          <h2>GIT & VERSION CONTROL</h2>
+           track code changes , collaborate with teams and manage project version using git and performs like git hub
+    "efficiently manage your code base with git-track changes , roll back error , and collaborate seamlessly using github or gitlab
+</div>
+      </div>
+      <div class="box2">
+        <div class="box2-content">
+        <img src="codding logo.png" alt="cloud" height="50px">
+        
+        <h2>UI/UX DESIGNER</h2>
+       
+      design clean engaging user interfaces and seamless user experiences using figma , adove XD and design system- focused on usability , accessibility and responsive design
+  i design modern user-freiendly iterface that look great and work well acreoss all device
+
+        </div>
+      </div>
+      <div class="box3">
+        <div class="box3-content">
+          <img src="board.webp" alt="devops logo" height="50px">
+          
+          <h2>EXPENSIVE PPT DESIGNER</h2>
+          create hight-end visually stunning powerpoint presentation tailored for corporate meeting , investor pitches brand storytelling and product showcases _ combined design aesthetics with strategic content flow
+          with animation, branding, and layouts that impress decision-makers
+
+          
+          
+        </div>
+      </div>
+    </div>  
+  
+  
+  
+  </section>
+  
+  
+
+
+
+
+
+
+
+
+
+  
+  
+  <!-- <section id="portfolio" class="section4" style="padding: 35px 25px 10px;">
+    <h1><span style="color: #7cf03d;">port</span>folio</h1>
+    <div class="project-box" id="projectBox">
+  <h2 id="title">Project 1</h2>
+  
+  <p id="description" style="font-size: larger;">Amazon.com clone</p>
+  <a href="amazon.in.html">amazon.in link</a>
+  <div class="buttons">
+    <button onclick="prevProject()" class="buttonpre">Previous</button>
+    <button onclick="nextProject()" class="buttonpre">Next</button>
+  </div>
+</div>
+  
+  
+  </section>
+   -->
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <section id="contact" class="section5">
+    <div class="contact-box-left">
+       <h1 style="text-transform: uppercase; font-size: 20px;">lets <span  style="color: #7cf03d; text-transform: uppercase;">work</span> together</h1>
+       <p>I’m always excited to collaborate on new and creative projects. Whether you nee
+        d a responsive website, 
+        cloud-based solutions, or a full-stack application 
+        — I’m here to help. Let’s build something amazing
+         together!</p>
+
+        <div class="box1-contact" style="text-align: center; align-items: center; display: flex; text-align: center;">
+          <img src="phone-call-white-icon.png" alt="logo phone" height="30px" width="30px"">
+          
+        
+        <div class="phone">PHONE<p style="color: #fff; font-size: medium;">7458944200</p></div>
+      </div>
+
+      <div class="box2-contact" style="text-align: center; align-items: center; display: flex; text-align: center;">
+          <img src="email-envelope-white-icon.webp" alt="logo phone" height="30px" width="30px"">
+          
+        
+        <div class="phone">EMAIL<p style="color: #fff; font: size 10px;;">mayankt1303@gmail.com</p></div>
+      </div>
+
+      <div class="box3-contact" style="text-align: center; align-items: center; display: flex; text-align: center;">
+          <img src="location-icon-white-png-12.jpg" alt="logo phone" height="30px" width="30px"">
+          
+        
+        <div class="phone">ADDRESS<p style="color: #fff; font-size: medium;">india</p></div>
+      </div>
+
+
+       </div>
+
+
+
+    <div class="contact-box-right">
+      <h2 style="font: 500;   background-color:#7cf03d; width:auto; margin-top: 30px; color: #15181c; margin-bottom: 20px; 
+      border-top-left-radius: 10px; border-top-right-radius: 10px;">contact me !</h2>
+      <div class="bigbox" style="border: 1px solid #7cf03d; width: auto;">
+         
+        <div class="form">
+         <form action="https://formspree.io/f/mnnzgraj" method="POST" class="contact-form">
+  
+  <div margin-top: 10px; row-gap: 220px;">
+  <input type="text" name="name" placeholder="Your Name" required />
+  <input type="email" name="email" placeholder="Your Email" required /></div>
+  
+  <div margin-top: 10px; row-gap: 220px;">
+  <input type="tel" name="phone" placeholder="Your Phone Number" required />
+  <input type="text" name="city" placeholder="Your City" required /></div>
+  <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
+  <button type="submit">Send Message</button>
+</form>
+  </div>
+      </div>
+      
+    </div>
+
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script>
+    const menuBtn = document.querySelector('.menu-btn');
+    const menu = document.querySelector('.menu');
+
+    menuBtn.addEventListener('click', () => {
+      menu.classList.toggle('show');
+    });
+
+    document.querySelectorAll('.menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        menu.classList.remove('show');
+      });
+    });
+
+<!--text animation-->
+
+ const roles = ["Frontend Developer.", "Cloud Engineer.","DevOps Engineer."];
+    let roleIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    const textSpan = document.getElementById("typed-text");
+
+    function typeEffect() {
+      const currentRole = roles[roleIndex];
+      
+      if (!isDeleting) {
+        textSpan.textContent = currentRole.substring(0, charIndex + 1);
+        charIndex++;
+        
+        if (charIndex === currentRole.length) {
+          setTimeout(() => {
+            isDeleting = true;
+            typeEffect();
+          }, 3000); // Wait 3s after full text typed
+          return;
+        }
+      } else {
+        textSpan.textContent = currentRole.substring(0, charIndex - 1);
+        charIndex--;
+        
+        if (charIndex === 0) {
+          isDeleting = false;
+          roleIndex = (roleIndex + 1) % roles.length;
+        }
+      }
+
+      const delay = isDeleting ? 40 : 100;
+      setTimeout(typeEffect, delay);
+    }
+
+    typeEffect();
+
+
+     function showContent(id) {
+      const contents = document.querySelectorAll('.content');
+      contents.forEach(c => c.classList.remove('active'));
+
+      const selected = document.getElementById(id);
+      if (selected) {
+        selected.classList.add('active');
+      }
+    }
+
+
+
+
+      window.addEventListener("DOMContentLoaded", function () {
+    const form = document.querySelector(".contact-form");
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const data = new FormData(form);
+      fetch(form.action, {
+        method: form.method,
+        body: data,
+        headers: {
+          'Accept': 'application/json'
+        }
+      }).then(response => {
+        if (response.ok) {
+          alert("Message sent successfully!");
+          form.reset();
+        } else {
+          alert("Something went wrong. Please try again.");
+        }
+      });
+    });
+  });
+
+
+ // Wait for animation to complete
+    setTimeout(() => {
+      document.querySelector(".loader-wrapper").style.display = "none";
+      document.querySelector(".content").style.display = "block";
+      document.body.style.overflow = "auto";
+    }, 2000); // 2 seconds total delay
+
+
+
+     const projects = [
+    { title: "Project 1", description: "This is a the description  Project 1." },
+    { title: "Project 2", description: "This is the description of Project 2." },
+    { title: "Project 3", description: "This is the description of Project 3." },
+    { title: "Project 4", description: "This is the description of Project 4." }
+  ];
+
+  let index = 0;
+
+  function showProject(i) {
+    document.getElementById("title").textContent = projects[i].title;
+    document.getElementById("description").textContent = projects[i].description;
+  }
+
+  function nextProject() {
+    index = (index + 1) % projects.length;
+    showProject(index);
+  }
+
+  function prevProject() {
+    index = (index - 1 + projects.length) % projects.length;
+    showProject(index);
+  }
+</script>
+
+
+
+
+</body>
+</html>
